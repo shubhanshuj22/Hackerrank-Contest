@@ -1,0 +1,35 @@
+
+#Python 
+
+test = int(input());
+while(test):
+    test-=1;
+    s = input();
+    if(len(s)>10):
+        print(s[0]+str(len(s)-2)+s[-1]);
+    else:
+        print(s)
+       
+       
+       
+--------------------------------------------------------------------------------------------------------------------------------------     
+#JAVA
+
+import java.io.*;
+import java.util.Scanner;
+
+public class Sol {
+    public static void main (String[] args) {
+Scanner sc = new Scanner(System.in);
+int test = Integer.parseInt(sc.nextLine());
+while(test>0){
+    test--;
+    String s = sc.nextLine();
+    if(s.length()>10){
+        System.out.println(s.charAt(0)+""+(s.length()-2)+""+s.charAt(s.length()-1));
+    }
+    else
+        System.out.println(s);
+}
+    }
+}
