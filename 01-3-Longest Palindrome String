@@ -1,0 +1,54 @@
+ 
+import java.io.*;
+import java.util.*;
+ 
+public class GFG {
+    public static String reverseString(String s){
+        String ans = "";
+        for(int i=s.length()-1;i>=0;i--)
+        ans+=s.charAt(i);
+        return ans;
+    }
+    
+    
+    
+    
+	public static void main (String[] args)throws IOException {
+// 		System.out.println("GfG!");
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+String i1[]=br.readLine().split(" ");
+int n = Integer.parseInt(i1[0]);
+int m = Integer.parseInt(i1[1]);
+ArrayList<String> ar = new ArrayList<>();
+String list[]=new String[n];
+ 
+for(int i=0;i<n;i++)
+list[i] = br.readLine();
+ 
+String extra="";
+for(int i=0;i<n;i++){
+    boolean flag=true;
+    String temp = reverseString(list[i]);
+    for(int j=i+1;j<n;j++){
+        if(temp.equals(list[j])){
+            list[j]="";
+            ar.add(temp);
+            flag = false;
+            break;
+        }
+    }
+    if(flag){
+        if(temp.equals(reverseString(temp)) && !temp.equals(""))
+        extra=temp;
+    }
+}
+String ans="";
+for(String s: ar){
+    ans+=s;
+    
+}
+ans=ans+extra+reverseString(ans);
+System.out.println(ans.length());
+System.out.println(ans);
+	}
+}
