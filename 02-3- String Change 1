@@ -1,0 +1,19 @@
+test = int(input());
+while(test>0):
+    test-=1;
+    n= int(input());
+    s=input();
+    ss=s;
+    ans = 1;
+    ansstr=s
+    for i in range(n):
+        temp=s[0:i];
+        temp1=s[i:];
+        x=temp1+temp;
+        if((n-(i+1))%2==0):
+            temp=temp[::-1]
+        temp1=temp1+temp;
+        if(temp1<ansstr):
+            ans=i+1;
+            ansstr=temp1
+    print(ansstr,ans,sep='\n')
