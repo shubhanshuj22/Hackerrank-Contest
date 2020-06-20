@@ -1,0 +1,8 @@
+ls = list(map(int,input().split()));
+ls.sort();
+x1,x2,x3,x4 = map(int,ls);
+
+c = x4 - x1;
+b = x4 - x2;
+a = x4 - x3;
+print(a,b,c);
