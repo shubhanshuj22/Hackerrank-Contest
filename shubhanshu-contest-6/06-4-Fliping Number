@@ -1,0 +1,18 @@
+test = int(input());
+while(test):
+    test-=1;
+    n,k = map(int,input().split());
+    ls = list(map(int,input().split()));
+    ls.sort();
+    neg = 0;
+    for i in range(n):
+        if(ls[i]<0 and k>0):
+            k-=1;
+            ls[i] = abs(ls[i]);
+    
+    if(k%2==0):
+        print(sum(ls));
+    else:
+        ls.sort();
+        ls[0] = -ls[0];
+        print(sum(ls))
