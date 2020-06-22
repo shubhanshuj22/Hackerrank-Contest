@@ -1,0 +1,13 @@
+n = int(input());
+for i in range(n):
+    k = n-1;
+    x=0
+    for j in range(i+1):
+        if(j==0):
+            print(i+1,end = ' ');
+            x = i+1;
+        else:
+            print(x+k,end = ' ');
+            x = x+k
+            k-=1;
+    print()
