@@ -1,0 +1,61 @@
+#Python
+n = int(input());
+ls = list(map(str,input().split()));
+for i in range(len(ls)):
+    for j in range(i+1,len(ls),1):
+        if(ls[i]+ls[j]<ls[j]+ls[i]):
+            ls[i],ls[j]=ls[j],ls[i];
+print(int(''.join(ls)))
+
+-----------------------------------------------------------------------------------------
+#Java
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+
+class Solution {
+    private class xx implements Comparator<String>{
+        
+        @Override
+        public int compare(String a,String b){
+            String o1 = a+b;
+            String o2 = b+a;
+            return o1.compareTo(o2);
+            
+        }
+    }
+    
+    public  String largestNumber(int[] nums) {
+        String ar[] = new String[nums.length];
+        for(int i =0;i<nums.length;i++)
+            ar[i] = ""+nums[i];
+        
+        Arrays.sort(ar, new xx());
+        String ans = "";
+        if(ar[ar.length-1].equals("0"))
+            return "0";
+        
+        for(int i =ar.length-1;i>=0;i--)
+            ans+=ar[i];
+        return ans;
+        
+    }
+}
+
+class GFG {
+	public static void main (String[] args) {
+// 		System.out.println("GfG!");
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int ar[]= new int[n];
+        for(int i =0 ;i<n;i++)
+            ar[i] = sc.nextInt();
+        Solution s = new Solution();
+        String ans = s.largestNumber(ar);
+        System.out.println(ans);
+        
+	}
+}
