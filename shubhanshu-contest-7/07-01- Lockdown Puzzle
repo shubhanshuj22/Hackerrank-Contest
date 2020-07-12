@@ -1,0 +1,14 @@
+n,k = map(int,input().split());
+ans =0;
+s = 1;
+flag = True;
+for i in range(n):
+    ans+=s;
+    s = (s*2)+2;
+    if(ans>k):
+        flag = False;
+        break
+if(flag):
+    print("YES");
+else:
+    print("NO")
