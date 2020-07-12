@@ -1,0 +1,13 @@
+a = 0;b = 1;
+n =int(input()) 
+for i in range(n):
+    ls = []
+    for j in range(i+1):
+        x = a+b;
+        a,b = b,x;
+        ls.append(x);
+    s = ((n-len(ls))*" *")[1:];
+    if(s==""):
+        print(*ls);
+    else:
+        print(s,*ls)
