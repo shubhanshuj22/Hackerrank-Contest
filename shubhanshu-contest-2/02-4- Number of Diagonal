@@ -1,0 +1,36 @@
+
+
+'''
+Author : Shubhanshu Jain;
+'''
+
+import math
+import random;
+from collections import * 
+mod =1000000007
+r1 = lambda : int(input());
+rm = lambda : map(int,input().split());
+rms = lambda : map(str,input().split());
+rls = lambda : list(rm())
+
+
+def def_value(): 
+    return "nan"
+    
+
+    
+def solve():
+    
+    r,c = rm();
+    m = min(r,c);
+    for i in range(r):
+        for j in range(c):
+            i1 = min(j,r-i-1);
+            j1 = min(i,c-j-1);
+            print(i1+j1+1,end = " ");
+        print()
+        
+
+    
+solve();
+
