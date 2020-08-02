@@ -1,0 +1,7 @@
+n,a,b = map(int,input().split());
+x = a+b;
+r = n%x;
+n = n//x;
+if(r>a):
+    r = a;
+print(a*n+r)
