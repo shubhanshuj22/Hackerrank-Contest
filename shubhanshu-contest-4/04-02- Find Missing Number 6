@@ -1,0 +1,20 @@
+
+
+'''
+Author : Shubhanshu Jain;
+'''
+
+import math
+mod=1000000007;
+
+n = int(input());
+ls=list(map(int,input().split()))
+ar=[0]*(n+1);
+for i in ls:
+    ar[i]=1
+ans=0;
+for i in range(1,n+1):
+    if(ar[i]==0):
+        ans=i;
+        break;
+print(ans)
