@@ -1,0 +1,20 @@
+n = int(input());
+# test-=1;
+ls  = list(map(int, input().split()));
+# ls.sort()
+ans =1;
+i = j = 0;
+while(j<n-1 and i<=j):
+    temp=1;
+    while(j<n-1 and 2*ls[j]>=ls[j+1]):
+        j+=1;
+        temp+=1;
+    if(i==j):
+        i+=1
+        j+=1;
+    else:
+        i=j;
+        
+    if(temp>ans):
+        ans=temp;
+print(ans)
