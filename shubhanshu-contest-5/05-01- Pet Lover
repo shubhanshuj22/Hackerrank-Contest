@@ -1,0 +1,18 @@
+'''
+Author : Shubhanshu Jain;
+'''
+import sys
+input = sys.stdin.readline
+from collections import Counter
+import math
+import random;
+mod =1000000007
+
+
+a,b,x = map(int,input().split());
+if(x<a):
+    print("NO");
+elif((a+b)>=x):
+    print("YES");
+else:
+    print("NO")
