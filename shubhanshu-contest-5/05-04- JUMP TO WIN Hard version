@@ -1,0 +1,19 @@
+This code work for both 3 and 4
+
+code:
+
+'''
+Author : Shubhanshu Jain;
+'''
+import sys
+input = sys.stdin.readline
+from collections import Counter
+import math
+import random;
+mod =1000000007
+
+n,m =  map(int,input().split());
+ans = 0;
+for i in range(n):
+    ans+=(((i+1)+(i+1)*m)*m)//2;
+print(ans)
