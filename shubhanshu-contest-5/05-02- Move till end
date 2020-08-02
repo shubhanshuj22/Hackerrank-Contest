@@ -1,0 +1,23 @@
+
+'''
+Author : Shubhanshu Jain;
+'''
+import sys
+input = sys.stdin.readline
+from collections import Counter
+import math
+import random;
+mod =1000000007
+
+
+n = int(input());
+k =1;
+
+for i in range(n):
+    ls = [];
+    for j in range(n):
+        ls.append(k);
+        k+=1;
+    if(i%2==1):
+        ls = ls[::-1];
+    print(*ls);
