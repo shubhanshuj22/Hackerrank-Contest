@@ -1,0 +1,20 @@
+ 
+'''
+Author : Shubhanshu Jain;
+'''
+ 
+import math
+mod=1000000007;
+
+s=list(input());
+ans=1
+i=0;
+n=len(s)
+while(i<n-1):
+    temp=1;
+    while(i<n-1 and s[i]==s[i+1]):
+        temp+=1;
+        i+=1;
+    i+=1;
+    ans=max(ans,temp)
+print(ans)  
