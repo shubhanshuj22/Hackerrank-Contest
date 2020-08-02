@@ -1,0 +1,39 @@
+This code works for both question 4 and 5
+
+Code:
+
+'''
+Author : Shubhanshu Jain;
+'''
+
+import math
+mod=1000000007;
+
+def cal(ls):
+    ans=[0]*100000;
+    for i in range(2,100000):
+        if(ans[i]==0):
+            ls.append(i);
+        else:
+            continue;
+            
+        for j in range(i,100000,i):
+            ans[j]=1;
+    
+prime=[];
+cal(prime);
+test = int(input());
+while(test):
+    test-=1;
+    n = int(input());
+    ans = 1;
+    for i in prime:
+        if(i>n):
+            break;
+            
+        x = int(math.log(n,i));
+        x = int(i**x)
+        ans*=x;
+        ans%=mod
+    print(ans)
+
