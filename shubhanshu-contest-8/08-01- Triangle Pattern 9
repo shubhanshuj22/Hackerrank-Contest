@@ -1,0 +1,8 @@
+n = int(input());
+for i in range(n,0,-1):
+    if(n==i or i==1):
+        print(i*'*');
+    else:
+        print("*",' '*(i-2),"*",sep='')
+        
+    
