@@ -1,0 +1,35 @@
+#Python code
+n = int(input())
+ls = list(map(int,input().split()))
+ans = 10**10
+for i in range(-100,101):
+    temp = 0
+    for j in range(n):
+        temp+=(ls[j]-i)**2
+    ans = min(temp,ans)
+print(ans)
+
+
+
+#C++ code
+#include<bits/stdc++.h>
+    using namespace std;
+     
+    int main(){
+        int N;
+        cin>>N;
+        vector<int> vec(N,0);
+        for(int i=0;i<N;++i){
+            cin>>vec[i];
+        }
+        int ans=INT_MAX,temp;
+        for(int i=-100;i<=100;++i){
+            temp=0;
+            for(int j=0;j<N;++j){
+                temp+=(vec[j]-i)*(vec[j]-i);
+            }
+            ans=min(ans,temp);
+        }
+        cout<<ans;
+        return 0;
+    }
