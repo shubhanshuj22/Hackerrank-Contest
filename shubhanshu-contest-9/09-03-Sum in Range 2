@@ -1,0 +1,73 @@
+Both java and python code 
+
+
+//Java Code
+
+import java.util.Scanner;
+import java.io.*;
+
+class Solution {
+    public static void main (String[] args)throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+    int test = Integer.parseInt(br.readLine());
+    while(test-->0){
+        String i1[] = br.readLine().split(" ");
+        int n = Integer.parseInt(i1[0]);
+        int q= Integer.parseInt(i1[1]);
+
+        String s[]= br.readLine().split(" ");
+        long ar[]=new long[n];
+        for(int i=0;i<n;i++){
+        ar[i]=Long.parseLong(s[i]);
+        }
+
+        //prefix sum
+        for(int i=1;i<n;i++){
+            ar[i]+=ar[i-1];
+        }
+
+        while(q-->0){
+            String i2[]= br.readLine().split(" ");
+            int l = Integer.parseInt(i2[0]);
+            int r = Integer.parseInt(i2[1]);
+            if(l==1)
+            System.out.println(ar[r-1]);
+            else
+            System.out.println(ar[r-1]-ar[l-2]);
+        }
+
+    }
+
+    }
+} 
+
+
+
+
+
+
+
+
+
+
+#Python3
+
+test = int(input())
+while(test):
+    test-=1
+    n,q = map(int,input().split())
+    ls = list(map(int,input().split()))
+    ar = [0]*n
+    ar[0] = ls[0]
+    for i in range(1,n):
+        #Creating prefix sum array 
+        ar[i] = ar[i-1]+ls[i]
+    for i in range(q):
+        L,R = map(int,input().split())
+        if L==1:
+            print(ar[R-1])
+        else:
+            print(ar[R-1]-ar[L-2])
+            
+
