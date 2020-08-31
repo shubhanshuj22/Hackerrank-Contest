@@ -1,0 +1,12 @@
+'''
+Author : Shubhanshu Jain;
+'''
+
+
+import math
+n,k = map(int,input().split());
+if k==1:
+    print(n);
+else:
+    x = int(math.log(n,2));
+    print((2**(x+1))-1)
