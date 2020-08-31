@@ -1,0 +1,27 @@
+'''
+Author : Shubhanshu Jain;
+'''
+
+def solve():
+    test = int(input())
+    while(test):
+        test-=1;
+        n = int(input())
+        ls = list(map(int,input().split()))
+        pos = [0]*100010;
+        neg = [0]*100010;
+        for i in ls:
+            if i >0:
+                pos[i]+=1;
+            else:
+                neg[abs(i)]+=1;
+        ans = 0;
+        
+        
+        for i in range(100010):
+            if pos[i] and neg[i]:
+                ans+=1;
+        print(ans)
+      
+solve();
+
