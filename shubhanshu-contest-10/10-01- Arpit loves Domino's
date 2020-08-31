@@ -1,0 +1,20 @@
+'''
+Author : Shubhanshu Jain;
+'''
+
+def solve():
+    test = int(input());
+    while(test):
+        test-=1;
+        n = int(input());
+        ans = 0;
+        i=2048
+        while(n ):
+            ans+=n//i;
+            n = n%i;
+            i= i//2;
+        print(ans)
+    
+solve();
+
+
