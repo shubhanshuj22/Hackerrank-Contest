@@ -1,0 +1,28 @@
+'''
+Author: Shubhanshu jain
+'''
+
+def CheckCubeRoot(n):
+    x = round(n**(1/3));
+    if (x*x*x) == n:
+        return True;
+    return False;
+
+test = int(input());
+while(test):
+    test-=1;
+    n = int(input());
+    ls = list(map(int,input().split()))
+    ans = 10**18;
+    for i in range(n):
+        s = 0;
+        for j in range(i,n):
+            s += ls[j];
+            if(CheckCubeRoot(s)):
+                ans = min(ans,s);       
+        
+    if(ans == 10**18):
+        print(-1);
+    else:
+        print(ans)
+            
