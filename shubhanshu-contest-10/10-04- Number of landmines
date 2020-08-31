@@ -1,0 +1,20 @@
+
+import math
+
+def checkSqrt(n):
+    x = math.log(n,2)
+    return x==int(x);
+    
+
+test = int(input())
+while(test):
+    test-=1
+    n = int(input())
+    ls = list(map(int,input().split()))
+    ans = 0 
+    for i in ls:
+        if i==0:
+            continue
+        if checkSqrt(i):
+            ans+=1
+    print(ans)
