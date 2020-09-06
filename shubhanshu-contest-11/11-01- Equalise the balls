@@ -1,0 +1,18 @@
+'''
+Author : Shubhanshu Jain;
+'''
+
+def solve():
+    test = int(input())
+    while(test):
+        test-=1
+        ans = 0;
+        n = int(input())
+        ls1 = list(map(int,input().split()))
+        ls2 = list(map(int,input().split()))
+        min1 = min(ls1)
+        min2 = min(ls2)
+        for i in range(n):
+            ans += max(abs(ls1[i]-min1),abs(ls2[i]-min2))
+        print(ans)
+solve()
