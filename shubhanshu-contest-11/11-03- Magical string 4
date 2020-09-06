@@ -1,0 +1,19 @@
+'''
+Author : Shubhanshu Jain;
+'''
+
+def solve():
+    s = input()
+    try:
+        x = s.index("AB");
+        y = s.rindex("BA");
+        a = s.index("BA");
+        b = s.rindex("AB");
+        if(x!=-1 and y!=-1 and ((x+1!=y and y+1!=x) or (a+1!=b and b+1!=a))):
+            print("STEAL")
+        else:
+            print("NOT TO STEAL")
+    except:
+            print("NOT TO STEAL")
+    
+solve()
