@@ -1,0 +1,33 @@
+'''
+Author : Shubhanshu Jain;
+'''
+
+def solve():
+    n = int(input())
+    ls = list(map(int,input().split()))
+    q = int(input())
+    for i in range(1,n):
+        ls[i]+=ls[i-1]
+    while(q):
+        q-=1
+        typ,l,r = map(str,input().split())
+        l = int(l)-1
+        r = int(r)-1
+        if typ=="sum" :
+            if(l==0):
+                print(ls[r])
+            else:
+                print(ls[r]-ls[l-1])
+        else:
+            x = 0
+            if l!=0:
+                x = ls[l-1]
+            y = 0
+            if r==0:
+                y = ls[n-1]
+            else:
+                y = ls[n-1]-ls[r]
+            print(x+y)
+    
+solve()
+
