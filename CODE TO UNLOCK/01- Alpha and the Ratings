@@ -1,0 +1,38 @@
+'''
+Author @ Shubhanshu Jain
+'''
+def printColor(rating):
+    if rating<=0:
+        return "Newbie";
+    if rating <=1500:
+        return "Grey"
+    if rating <=1700:
+        return "Green"
+    if rating <= 1900:
+        return "Blue"
+    if rating<=2000:
+        return "Indigo"
+    if rating <=2500:
+        return "Purple"
+    return "Red";
+    
+
+def solve():
+    f1=  open("inputss.txt","r")
+    f2 = open("ans.txt","w")
+    test = int(f1.readline())
+    while(test):
+        test-=1
+        n,q = map(int,f1.readline().split())
+        ls = list(map(int,f1.readline().split()))
+        ls[0] += 1500
+        for i in range(1,n):
+            ls[i] += ls[i-1]
+        while(q):
+            q-=1;
+            ind = int(f1.readline());
+            f2.write(printColor(ls[ind-1])+"\n")
+    
+    
+    
+solve()
