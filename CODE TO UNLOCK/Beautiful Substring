@@ -1,0 +1,36 @@
+# This Solution is just given by native approch we can also do this by 2 pointer approch
+
+
+'''
+Author @ Shubhanshu Jain
+'''
+def check(k,s):
+    n = len(s)
+    for i in range(n-k+1):
+        temp = ""
+        flag = 1
+        for j in range(i,i+k):
+            temp += s[j];
+            if i==j:
+                continue;
+            elif s[j]<s[j-1]:
+                flag = 0;
+                break;
+        if flag:
+            return temp;
+    return "-1"
+                
+            
+        
+
+def solve():
+    k = int(input())
+    s =  input();
+    start = check(k,s);
+    end = check(k,s[::-1]);
+    if end != "-1":
+        end = end[::-1]
+    else:
+        end = "-2"
+    print(start,end,sep='\n')
+solve()
