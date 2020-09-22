@@ -1,0 +1,25 @@
+'''
+Author @ Shubhanshu Jain
+'''
+              
+def solve():
+    n = int(input())
+    ls = list(map(int,input().split()))
+    
+    tsum = sum(ls) 
+    lsum = 0
+    flag = 1
+    for i, num in enumerate(ls): 
+        tsum -= num 
+        if lsum == tsum: 
+            print(i)
+            flag = 0
+            break
+            
+        lsum += num 
+        
+    if flag:
+        print(-1)
+    
+solve()
+  
